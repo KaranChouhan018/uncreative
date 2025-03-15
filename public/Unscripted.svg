@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172.36 264.31">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1f2a37;
+        font-family: Ibrand-Regular, Ibrand;
+        font-size: 90.76px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <text class="cls-1" transform="translate(0 77.14) scale(.96 1)"><tspan x="0" y="0">U</tspan></text>
+      <text class="cls-1" transform="translate(3.17 159.38) scale(.96 1)"><tspan x="0" y="0">S</tspan></text>
+      <text class="cls-1" transform="translate(.09 241.62) scale(.96 1)"><tspan x="0" y="0">P</tspan></text>
+      <text class="cls-1" transform="translate(59.45 77.14) scale(.96 1)"><tspan x="0" y="0">N</tspan></text>
+      <text class="cls-1" transform="translate(56.02 159.38) scale(.96 1)"><tspan x="0" y="0">C</tspan></text>
+      <text class="cls-1" transform="translate(60.02 241.62) scale(.96 1)"><tspan x="0" y="0">T</tspan></text>
+      <text class="cls-1" transform="translate(116.12 77.14) scale(.96 1)"><tspan x="0" y="0">/</tspan></text>
+      <text class="cls-1" transform="translate(171.23 159.38) rotate(-180) scale(.96 -1)"><tspan x="0" y="0">R</tspan></text>
+      <text class="cls-1" transform="translate(116.12 241.62) scale(.96 1)"><tspan x="0" y="0">D</tspan></text>
+    </g>
+  </g>
+</svg>

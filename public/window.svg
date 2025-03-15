@@ -1,1 +1,96 @@
 <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 2.5h13v10a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1zM0 1h16v11.5a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 0 12.5zm3.75 4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5M7 4.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5" fill="#666"/></svg>
+
+
+
+// import React, { useRef, useMemo } from 'react';
+// import { useGLTF, useTexture } from '@react-three/drei';
+// import { useFrame } from '@react-three/fiber';
+// import * as THREE from 'three';
+
+// export function Model(props) {
+//   const { nodes, materials } = useGLTF('/untitled1.glb');
+//   const smokeTexture = useTexture('/Smoke15Frames.png');
+//   const planesRef = useRef([]);
+
+//   // Create smoke material
+//   const smokeMaterial = useMemo(() => new THREE.MeshLambertMaterial({
+//     map: smokeTexture,
+//     transparent: true,
+//     opacity: 0.1,
+//     side: THREE.DoubleSide,
+//     depthWrite: false,
+//     blending: THREE.AdditiveBlending
+//   }), [smokeTexture]);
+
+//   // Animate the planes
+//   useFrame((state, delta) => {
+//     planesRef.current.forEach(plane => {
+//       if (plane) {
+//         plane.rotation.z += delta * 0.2;
+//       }
+//     });
+//   });
+
+//   // Get all planes that use Material.002
+//   const material002Planes = Object.keys(nodes).filter(key => 
+//     key.includes('Plane') && 
+//     nodes[key].material.name === 'Material.002'
+//   );
+
+//   return (
+//     <group {...props} dispose={null}>
+//       <mesh
+//         castShadow
+//         receiveShadow
+//         geometry={nodes.Close.geometry}
+//         material={materials['Material.001']}
+//         position={[0.141, 0.142, 0.668]}
+//         scale={2.94}
+//       />
+//       <mesh
+//         castShadow
+//         receiveShadow
+//         geometry={nodes.Far.geometry}
+//         material={materials['Material.001']}
+//         position={[-1.505, 0.695, 0.392]}
+//         scale={2.94}
+//       />
+//       <mesh
+//         castShadow
+//         receiveShadow
+//         geometry={nodes.Middle.geometry}
+//         material={materials['Material.001']}
+//         position={[-1.505, 0.695, 0.392]}
+//         scale={1.5}
+//       />
+
+//       {/* Material.002 planes with smoke effect */}
+//       {material002Planes.map((key, index) => {
+//         const node = nodes[key];
+//         // Create multiple overlapping planes for each Material.002 plane
+//         return Array(3).fill().map((_, layerIndex) => (
+//           <mesh
+//             key={`${key}-${layerIndex}`}
+//             ref={el => (planesRef.current[index * 3 + layerIndex] = el)}
+//             geometry={node.geometry}
+//             material={smokeMaterial}
+//             position={[
+//               node.position.x + (Math.random() * 0.2 - 0.1),
+//               node.position.y + (Math.random() * 0.2 - 0.1),
+//               node.position.z + (Math.random() * 0.2 - 0.1)
+//             ]}
+//             rotation={[
+//               node.rotation.x,
+//               node.rotation.y,
+//               node.rotation.z + Math.random() * Math.PI * 2
+//             ]}
+//             scale={node.scale}
+//           />
+//         ));
+//       })}
+//     </group>
+//   );
+// }
+
+// // Preload model for optimization
+// useGLTF.preload('/untitled1.glb');
