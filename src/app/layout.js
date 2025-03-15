@@ -1,10 +1,17 @@
 import { Figtree } from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 
 const figtree = Figtree({
   variable: "--font-fig-tree",
   subsets: ["latin"],
 });
+
+const neue = localFont({
+  src: '../../public/fonts/ibrand.otf',
+  variable: '--font-neue-montreal',
+  display: 'swap',
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -13,13 +20,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${figtree.variable} antialiased`}
-      >
-        <Navbar />
+    <html lang="en" className={`  scroller-hidden ${figtree.variable} ${neue.variable}`}>
+    <body className= {`${figtree.className} ${neue.className} antialiased`}>      
+    
         {children}
-      </body>
-    </html>
+
+    </body>
+
+  </html>
+
   );
 }

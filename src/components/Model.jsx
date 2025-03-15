@@ -12,8 +12,8 @@ export function Model(props) {
         receiveShadow
         geometry={nodes.Close.geometry}
         material={materials['Material.001']}
-        position={[0.141, 0.142, 0.668]}
-        scale={2.94}
+        position={[0.2, 0.142, 0.668]}
+        scale={3.2}
       />
       <mesh
         name="Far"

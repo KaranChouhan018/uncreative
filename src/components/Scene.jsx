@@ -39,11 +39,11 @@ export default function Index() {
           letterSpacing: "0.05em",
           lineHeight: "1.2",
           opacity: 0.9,
-        mixBlendMode: "difference",
           textShadow: "0 2px 4px rgba(0,0,0,0.3)"
-        }}>
-          Tapping into your<br/>
-          brands' unrealized potential
+        }} className="mix-blend-difference font-figtree">
+          The world doesn’t need another scripted agency. <br />
+          It needs yours –
+<span className="font-neue"> UNSCRIPTED</span>
         </div>
         <div style={{
           position: "absolute",
@@ -75,22 +75,25 @@ export default function Index() {
         <ambientLight intensity={0.2} />
         <directionalLight intensity={0.8} position={[0, 2, 3]} />
         <Environment preset="night" />
-        <Float speed={0.5} rotationIntensity={0.5} floatIntensity={2}>
+     
+        
+        <Suspense fallback={null}>
+        <Float speed={0.5} rotationIntensity={0.2} floatIntensity={2}>
           <Model 
             scale={50}  
             position={[-10, -50, 0]} 
             rotation={[0, 30, 0]}
           />
-        </Float>
-        
-        <Suspense fallback={null}>
-        <Cloud position={[0,0, -250]} speed={0.1} opacity={0.5} scale={50} />
-          <Cloud position={[30, -30, 0]} speed={0.1} opacity={0.1} scale={10} />
-          <Cloud position={[-50, 30, 0]} speed={0.2} opacity={0.3} scale={6} />
-          <Cloud position={[-25, -30, 0]} speed={0.2} opacity={0.3} scale={10} />
-   
+     
+        <Cloud position={[0,0, -220]} speed={0.1} opacity={0.9} scale={50} />
+          <Cloud position={[40,-20, 10]} speed={0.1} opacity={0.3} scale={6}   />
+          <Cloud position={[-50, 30, 0]} speed={0.2} opacity={0.3} scale={6}   />
+          <Cloud position={[-25, -30, 0]} speed={0.2} opacity={0.3} scale={7}   />
+          <Cloud position={[50, 35, 0]} speed={0.2} opacity={0.1} scale={7}  />
+          </Float>
         </Suspense>
 
+ 
         <SimpleParticles />
       </Canvas>
     </div>

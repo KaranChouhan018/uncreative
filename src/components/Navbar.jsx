@@ -2,7 +2,7 @@ import { Mail, Phone, Linkedin, Instagram } from 'lucide-react';
 
 export default function Navbar() {
     return (
-        <div className="fixed top-0 w-screen z-[100000] text-[#4B525A] ">
+        <div className="fixed top-0 w-screen z-[100000]  ">
             <div className="flex justify-between items-center p-4">
                 <h1 className="text-xl">Unscripted.Agency</h1>
                 <div className="flex space-x-4">
