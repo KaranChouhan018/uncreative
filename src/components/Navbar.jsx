@@ -4,7 +4,7 @@ export default function Navbar() {
     return (
         <div className="fixed top-0 w-screen z-[100000]  ">
             <div className="flex justify-between items-center p-4">
-                <h1 className="text-xl">Unscripted.Agency</h1>
+                <h1 className="text-xl ">UNSCRIPTED.AGENCY</h1>
                 <div className="flex space-x-4">
                     <a href="mailto:example@example.com" className="flex items-center">
                         <Mail className="mr-1" />
