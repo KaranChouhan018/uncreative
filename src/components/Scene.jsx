@@ -4,15 +4,13 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment, useTexture } from "@react-three/drei";
 import { Model } from "./Model";
 import { Cloud } from "@react-three/drei";
-import { EffectComposer, Bloom, DepthOfField } from "@react-three/postprocessing";
 import { Suspense } from "react";
-import { Fluid } from "@whatisjery/react-fluid-distortion";
 import { Float } from "@react-three/drei";
 import * as THREE from "three";
-import RadialBlurShader from './RadialBlurShader';
 import Image from "next/image";
 
 export default function Index() {
+
   return (
     <div style={{ position: "relative", width: "100%", height: "100vh" }}>
       <div 
@@ -30,21 +28,7 @@ export default function Index() {
           zIndex: 10 
         }}
       >
-        <div style={{ 
-          textAlign: "center", 
-          maxWidth: "80%", 
-          color: "white",
-          fontSize: "clamp(1.5rem, 4vw, 3.5rem)",
-          fontWeight: "bold",
-          letterSpacing: "0.05em",
-          lineHeight: "1.2",
-          opacity: 0.9,
-          textShadow: "0 2px 4px rgba(0,0,0,0.3)"
-        }} className="mix-blend-difference font-figtree">
-          The world doesn’t need another scripted agency. <br />
-          It needs yours –
-<span className="font-neue"> UNSCRIPTED</span>
-        </div>
+       
         <div style={{
           position: "absolute",
           bottom: "20px",
@@ -65,35 +49,32 @@ export default function Index() {
         style={{ background: "#848684" }}
         camera={{ position: [0, 0, 50] }}
         dpr={[1, 2]}
-        Bloom={{
-          luminanceThreshold: 0,
-          luminanceSmoothing: 0.2,
-          height: 300,
-        }}
+ 
         
       >
+          <fog attach="fog" args={["#848684", 20, 200]} position={[0, 40, 0]} />
         <ambientLight intensity={0.2} />
         <directionalLight intensity={0.8} position={[0, 2, 3]} />
         <Environment preset="night" />
      
         
         <Suspense fallback={null}>
-        <Float speed={0.5} rotationIntensity={0.2} floatIntensity={2}>
+        <Float speed={0.5} rotationIntensity={0.3} floatIntensity={2}>
           <Model 
             scale={50}  
             position={[-10, -50, 0]} 
             rotation={[0, 30, 0]}
+      
           />
      
         <Cloud position={[0,0, -220]} speed={0.1} opacity={0.9} scale={50} />
-          <Cloud position={[40,-20, 10]} speed={0.1} opacity={0.3} scale={6}   />
-          <Cloud position={[-50, 30, 0]} speed={0.2} opacity={0.3} scale={6}   />
-          <Cloud position={[-25, -30, 0]} speed={0.2} opacity={0.3} scale={7}   />
+          <Cloud position={[40,-20, 10]} speed={0.1} opacity={0.1} scale={6}   />
+          <Cloud position={[-50, 30, 0]} speed={0.2} opacity={0.1} scale={6}   />
+          <Cloud position={[-25, -30, 0]} speed={0.2} opacity={0.1} scale={7}   />
           <Cloud position={[50, 35, 0]} speed={0.2} opacity={0.1} scale={7}  />
           </Float>
         </Suspense>
 
- 
         <SimpleParticles />
       </Canvas>
     </div>
